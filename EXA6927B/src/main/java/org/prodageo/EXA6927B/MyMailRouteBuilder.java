@@ -16,18 +16,24 @@ public class MyMailRouteBuilder extends RouteBuilder
 	
 	String theSmtpServer = "smtp://smtp.syrhano.net:587" ;
 	//  "smtp://smtp.gmail.com" //GMAIL
-	String theRegisteredUser = "moi@insa-rouen.fr";
+	String formCL = "pnom@insa-rouen.fr";
+	String formCC = "pnom";
+	String formLL = "prenom.nom@insa-rouen.fr";
+	String formLC = "prenom.nom";
+	String theRegisteredUser = formCL ;
+	String theSender = formCL ;
+	String theReceiver = formLL ;
 	// String theRegisteredUser = "moi"; // gmail
-	String thePassword = "cavapasnon" ;
+	String thePassword = "cavapasnom" ;
 
 	final String HOST_MAIL_OPTIONS =
 	theSmtpServer
 	+ "?username=" + theRegisteredUser + "&password=" + thePassword
 	+ "&mail.smtp.auth=true"
 	+ "&mail.smtp.starttls.enable=true"
-	+ "&from=" +  theRegisteredUser
+	+ "&from=" +  theSender
 	+ "&subject=test camel"
-	+ "&to=" +  theRegisteredUser
+	+ "&to=" +  theReceiver
 	+ "&debugMode=true";
 
 	final String dateDuJour = 
